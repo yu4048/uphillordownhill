@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+/* 네비게이션 바 스타일링 */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(60, 225, 110);
+  user-select: none;
+  margin-bottom: 5000px;
+  overflow-x: hidden; /* 스크롤바 숨김 설정 */
+}
+
+.navbar {
+  background-color: #333; /* 배경색 설정 */
+  color: white; /* 글자색 설정 */
+  padding: 20px 0; /* 위아래 패딩 설정 */
+  display: flex;
+  justify-content: space-between; /* 로고와 메뉴를 좌우로 정렬 */
+  align-items: center; /* 로고와 메뉴를 수직 가운데 정렬 */
+  transform: scale(0.85); /* 초기 크기를 0.9배로 설정 */
+  transition: transform 1.5s, margin-top 0.3s; /* 변환과 margin-top 효과 설정 */
+  margin-top: 50px; /* 기본 위치를 50px 아래로 설정 */
+}
+
+.navbar:hover {
+  transform: scale(0.95); /* 마우스 오버 시 크기를 1.0배로 확대하고 유지 */
+  margin-top: 50px; /* 마우스 오버 시 위치를 50px 아래로 설정 */
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  color: white; /* 로고 글자색 설정 */
+  font-weight: bold;
+  font-size: 24px; /* 로고 폰트 크기 설정 */
+  transition: transform 0.3s; /* 변환 효과 설정 */
+}
+
+.navbar-logo a:hover {
+  transform: scale(1.0); /* 마우스 오버 시 크기를 1.0배로 확대하고 유지 */
+}
+
+.navbar-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-menu li {
+  margin-right: 20px;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: white; /* 메뉴 글자색 설정 */
+  font-weight: bold;
+  font-size: 30px;
+  transition: transform 0.3s; /* 변환 효과 설정 */
+}
+
+.navbar-menu a:hover {
+  transform: scale(1.0); /* 마우스 오버 시 크기를 1.0배로 확대하고 유지 */
+}
+
+/* 메뉴 아이템에 호버 효과 */
+.navbar-menu li::before {
+  content: ''; /* 가상 요소 내용 비우기 */
+  position: absolute;
+  bottom: -5px; /* 아래로 5px 내려가도록 설정 */
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: white; /* 호버 시 선색 변경 */
+  transition: width 0.3s ease; /* 너비에 대한 애니메이션 추가 */
+  transform-origin: 0% 50%; /* 선이 왼쪽에서 나타나도록 설정 */
+}
+
+.navbar-menu li:hover::before {
+  width: 100%; /* 호버시 선이 나타나도록 확장 */
+}
+
+/* 나머지 스타일 유지 */
+
+
+/* 네비게이션 바 스타일링 */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* 아래쪽 가장자리 정렬로 변경 */
+  padding: 10px 20px;
+  background-color: transparent;
+  color: white;
+  
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 50pt;
+  margin-left: 20px; /* 로고 왼쪽 간격 설정 */
+}
+
+.navbar-menu ul {
+  list-style: none;
+  display: flex;
+  margin-right: 20px; /* 메뉴 항목 오른쪽 간격 설정 */
+  
+}
+
+/* 메뉴 아이템에 3D 회전 효과 */
+.navbar-menu li {
+  position: relative;
+  perspective: 1000px;
+  margin-right: 20px; /* 메뉴 항목 오른쪽 간격 설정 */
+}
+
+.navbar-menu a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  font-family: 'DM Mono', monospace; /* DM Mono 글꼴 설정 */
+}
+
+.navbar-menu a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  transform: rotateX(0deg);
+  transform-origin: top center;
+  transition: transform 1s;
+  pointer-events: none;
+  
+}
+
+.navbar-menu li:hover a {
+  transform: rotateX(360deg);
+}
+
+/* 네비게이션 메뉴 간격 조정 */
+.navbar-menu li {
+  margin-right: 50px;
+}
+
+/* 배경 효과 스타일링 */
+.background-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* 80%에서 100%로 변경 */
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  /* 배경 이미지 추가 */
+  background-image: url('imgs/웹사이트배경-02.png');
+  background-repeat: no-repeat; /* 이미지 반복 없음 */
+  background-attachment: fixed; /* 이미지가 화면에 고정됨 */
+  background-size: cover; /* 이미지 크기를 화면에 맞게 조절 */
+  opacity: 1.0;
+  animation: wave 7s linear infinite;
+  overflow-x: hidden; /* 가로 스크롤 숨김 설정 */
+  
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+/* 로고 컨테이너 스타일링 */
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* 로고 이미지 스타일링 */
+.logo-image {
+  width: auto;
+  height: 32px;
+  margin-right: 5px; /* 이미지와 텍스트 간격을 조절합니다. */
+}
+/* 로고 텍스트 스타일링 */
+.logo-text {
+  color: white; /* 텍스트 색상 설정 */
+  font-size: 13px; /* 텍스트 폰트 크기 설정 */
+  font-family: DM Mono;
+}
+#follow-image {
+  position: fixed; /* 이미지를 고정 위치로 설정 */
+  pointer-events: none; /* 이미지가 마우스 이벤트를 가로채지 않도록 설정 */
+  width: 18px;
+  height: auto;
+}
+.message-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+#show-email-button {
+  background-color: #ffffff;
+  color: rgb(60, 225, 110);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: DM Mono;
+  font-weight: 500;
+}
+/* 로고 컨테이너 스타일 */
+.logo-container {
+  position: fixed; /* 화면 상단에 고정하지 않고 절대 위치로 설정 */
+  top: 10px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 999; /* 맨 위 레이어에 유지 */
+}
+
+
+/* .message-button 고정 위치 설정 */
+.message-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
+  z-index: 999; /* 항상 맨 위 레이어에 유지 */
+}
+
+/* .copyright 맨 아래에 위치하도록 설정 */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  color: white;
+  padding: 10px 0;
+  font-size: 7pt;
+  font-weight: 300;
+    transition: color 0.5s; /* 글자 색 변경에 트랜지션 추가 */
+  }
+  
+
+/* 스크롤바 너비를 조절합니다. 예를 들어, 10px로 설정합니다. */
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #f0f0f0; /* 스크롤바의 바탕색을 설정합니다. */
+}
+
+/* 수직 스크롤바 스타일링 */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(144, 255, 177); /* 스크롤바 색상 설정 */
+
+}
+
+/* 수평 스크롤바 스타일링 */
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #888; /* 스크롤바 색상 설정 */
+  border-radius: 10px; /* 모서리를 둥글게 만듭니다. */
+}
+#section1 {
+  position: absolute;
+  top: 1000px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px); /* 초기에 아래로 이동하도록 설정 */
+  transition: opacity 1.5s, transform 1.5s;
+  margin: 0px;
+  margin-left: 50px;
+  margin-top: 100px; /* 헤더의 높이와 동일한 값으로 설정하세요. */
+  padding-top: 40px; /* 원하는 값으로 조절하세요. */
+}
+
+#section1 h2{
+  color: white;
+  font-weight: 300;
+  font-family: DM Mono;
+  font-size: 84px;
+  margin-top: -50px;
+}
+#section1 p{
+  color: white;
+  font-weight: 300;
+  font-family: DM Mono;
+  font-size: 34px;
+  margin-top: -50px;
+  top: 1000px;
+}
+
+#section2 {
+  position: absolute;
+  margin-top: 1600px;
+  background-color: #fff; /* 배경색을 원하는 색상으로 고정 */
+  width: 100%;
+  height: 6000px;
+  opacity: 1; /* 배경색이 고정되므로 기본적으로 표시됩니다. */
+  transform: translateY(0); /* 배경색이 고정되므로 기본 위치로 표시됩니다. */
+}
+
+#section2 h2 {
+  color: rgb(60, 225, 110);
+  font-weight: 300;
+  font-family: DM Mono;
+  font-size: 84px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+#section2 p {
+  color: rgb(60, 225, 110);
+  font-weight: 300;
+  font-family: DM Mono;
+  font-size: 34px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+
+#white-circle2{
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 50%; /* 원 모양을 만들기 위해 50%로 설정 */
+  position: absolute;
+  top: 500px; /* 원을 수직 가운데로 위치시킴 */
+  left: 1250px; /* 원을 수평 가운데로 위치시킴 */
+  transform: translate(-50%, -50%); /* 원의 중심을 정확히 가운데로 이동 */
+  z-index: 2; /* 다른 요소 위에 표시 */
+}
+
+#white-circle {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+#circle-svg {
+  width: 100%;
+  height: 100%;
+  
+}
+
+#circle-path {
+  fill: transparent;
+}
+text {
+  font-size: 12px;
+  font-family: "Arial, sans-serif";
+  fill: rgb(60, 225, 110); /* 텍스트 색상 설정 */
+  letter-spacing: 2px; /* 원하는 자간 값으로 설정 */
+}
+/* 이미지 그리드 스타일링 */
+.image-grid {
+  display: flex;
+  justify-content: center; /* 이미지를 수평으로 가운데 정렬 */
+  align-items: center; /* 이미지를 수직으로 가운데 정렬 */
+  margin: 100px;
+  gap: 0; /* 이미지 간의 간격을 0으로 설정 */
+}
+
+.image-grid img {
+  width: 500px; /* 이미지의 너비를 100%로 설정하여 부모 요소에 맞게 확장합니다. */
+  height: auto; /* 높이를 자동으로 조절하여 이미지 비율을 유지합니다. */
+}
+
+.animated-image.blur-image img {
+margin: 0%;
+}
+#circle-svg {
+  cursor: pointer;
+}
+/* CSS 파일 내에서 또는 <style> 태그 내에서 스타일을 지정합니다. */
+#white-circle2 {
+  cursor: pointer; /* 커서 모양을 손가락 모양(pointer)으로 변경합니다. */
+}
+#hidden-image {
+  visibility: hidden;
+}
+#white-circle {
+margin-left: 200px;
+}
+#white-circle2{
+top: 600px;
+}
+#section3 {
+  position: absolute;
+  margin-top: 6800px;
+  background-color: rgb(60, 225, 110); /* 배경색을 원하는 색상으로 고정 */
+  width: 100%;
+  height: 950px;
+  opacity: 1; /* 배경색이 고정되므로 기본적으로 표시됩니다. */
+  transform: translateY(0); /* 배경색이 고정되므로 기본 위치로 표시됩니다. */
+}
+
+#section3 h2 {
+  color: #fff;
+  font-weight: 300;
+  font-family: DM Mono;
+  font-size: 84px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+#section3 p {
+  color: #fff;
+  font-weight: 300;
+  font-family: DM Mono;
+  font-size: 34px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+#section2 .design1 img {
+  max-width: 100%; /* 이미지의 최대 너비를 부모 요소에 맞게 조절합니다. */
+  height: auto; /* 높이를 자동으로 조절하여 가로 세로 비율을 유지합니다. */
+  top: 273px;
+  position: relative;
+}
+#section2 .design0 img {
+margin-top: 550px;
+height:auto ;
+width: 75%;
+}
+
+.design3 img {
+  max-width: 40%;
+  height: auto;
+  position: absolute;
+  top: 400px;
+  left: 0;
+  margin-left: 980px;
+  z-index: 3; /* 기존에 사용한 값보다 큰 값으로 설정 */
+}
+.design4 img {
+  max-width: 45%;
+  height: auto;
+  position: absolute;
+  top: 700px;
+  left: 0;
+  margin-left: 330px;
+  z-index: 3; /* 기존에 사용한 값보다 큰 값으로 설정 */
+}
+.design5 img {
+  max-width: 29%;
+  height: auto;
+  position: absolute;
+  top: 350px;
+  left: 0;
+  margin-left: 230px;
+  z-index: 0; /* 기존에 사용한 값보다 큰 값으로 설정 */
+}
+.package {
+  position: absolute; /* 부모 요소를 기준으로 위치를 설정 */
+  bottom: 1050px; /* 아래로 정렬 */
+}
+.motion video {
+  width: 50%; /* 부모 요소에 대해 80% 너비로 설정 */
+  height: auto; /* 자동으로 높이를 조정하여 가로 세로 비율 유지 */
+  margin-top: 350px; /* 원하는 간격 설정 */
+  max-width: 100%; /* 최대 너비를 100%로 설정하여 화면 크기에 맞춤 */
+  max-height: 100%; /* 최대 높이를 100%로 설정하여 화면 크기에 맞춤 */
+
+  display: block; /* 비디오를 블록 요소로 설정하여 가로 마진을 설정할 수 있게 함 */
+  /* margin-left: auto; 가로 마진을 자동으로 설정하여 비디오를 가운데로 정렬 */
+  /* margin-right: auto; 가로 마진을 자동으로 설정하여 비디오를 가운데로 정렬 */
+  margin-left: 700px;
+}
+
+.motionp{
+  margin-top: -400px;
+  margin-left: 200px;
+}
+
+ /* 선의 스타일을 정의합니다. */
+.thin-line{
+  width: 1550px; /* 선의 길이 */
+  height: 2px; /* 선의 두께 (얇은 선을 원한다면 값을 작게 조절합니다.) */
+  background-color: rgb(60, 225, 110); /* 선의 색상 */
+  transform-origin: 0% 0%; /* 회전 중심을 좌측 상단으로 설정 */
+  margin-left: 50px;
+  /* translateY(400px); */
+}
+    .thin-line0{
+      width: 1550px; /* 선의 길이 */
+      height: 2px; /* 선의 두께 (얇은 선을 원한다면 값을 작게 조절합니다.) */
+      background-color: rgb(60, 225, 110); /* 선의 색상 */
+      transform-origin: 0% 0%; /* 회전 중심을 좌측 상단으로 설정 */
+      margin-left: 50px;
+    }
+
+.thin-line3{
+  width: 1550px; /* 선의 길이 */
+  height: 2px; /* 선의 두께 (얇은 선을 원한다면 값을 작게 조절합니다.) */
+  background-color: rgb(60, 225, 110); /* 선의 색상 */
+  transform-origin: 0% 0%; /* 회전 중심을 좌측 상단으로 설정 */
+  margin-left: 50px;
+  margin-top: 34px;
+}
+
+.highlight-text {
+  font-size: 20px; /* 변경하고 싶은 글자 크기로 설정 */
+  /* 추가적인 스타일을 필요에 따라 지정할 수 있습니다. */
+  position: relative;
+  font-weight: 200;
+  top: -20px;
+}
+.highlight-text2 {
+  font-size: 20px; /* 변경하고 싶은 글자 크기로 설정 */
+  /* 추가적인 스타일을 필요에 따라 지정할 수 있습니다. */
+  position: relative;
+  font-weight: 400;
+  top: -850px;
+}
+.Editorial2 img {
+  max-width: 20%; /* 이미지의 최대 너비를 부모 요소에 맞게 설정합니다 */
+  height: auto; /* 이미지의 높이를 자동으로 조절하여 가로세로 비율 유지합니다 */
+  margin-left: 50px;
+  margin-top:  -100px;
+  margin: 0;
+}
+.image-container img {
+  width: 750px; /* 이미지의 너비를 조절하세요. */
+  height: auto; /* 높이를 자동으로 조절하도록 설정합니다. */
+margin-left: 50px;
+margin: 0;
+}
+.highlight-text3{
+  font-size: 145px; /* 변경하고 싶은 글자 크기로 설정 */
+  /* 추가적인 스타일을 필요에 따라 지정할 수 있습니다. */
+  position: relative;
+  font-weight: 100;
+  top: -700px;
+  z-index: -999;
+}
+
+.Editorial{
+  margin-top: -500px;
+}
+.image-container2 img{
+  width: 900px; /* 이미지의 너비를 조절하세요. */
+  height: auto; /* 높이를 자동으로 조절하도록 설정합니다. */
+margin: 0;
+position: absolute;
+left: 320px;
+top: 3030px;
+}
+.highlight-text4{
+  font-size: 250px; /* 변경하고 싶은 글자 크기로 설정 */
+  /* 추가적인 스타일을 필요에 따라 지정할 수 있습니다. */
+  position: relative;
+  font-weight: 100;
+  z-index: -999;
+top: -260px;
+left: 665px;
+line-height: 97%;
+}
+.image-container3 img{
+width: 12%;
+position: absolute;
+margin-top: 60px;
+left: 250px;
+}
+.image-container4 img{
+  width: 900px;
+  position: absolute;
+  top: 3030px;
+  z-index: -99;
+left: -580px;
+}
+.image-container5 img{
+  position: absolute;
+  width: 900px;
+  top: 3030px;
+  right: -425px;
+}
+.thin-line4{
+  width: 1550px; /* 선의 길이 */
+  height: 2px; /* 선의 두께 (얇은 선을 원한다면 값을 작게 조절합니다.) */
+  background-color: rgb(60, 225, 110); /* 선의 색상 */
+  transform-origin: 0% 0%; /* 회전 중심을 좌측 상단으로 설정 */
+  margin-left: 50px;
+  margin-top: 34px;
+}
+.Editorial img{
+  margin-top: 50px;
+}
+.highlight-text6 {
+  font-size: 20px; /* 변경하고 싶은 글자 크기로 설정 */
+  /* 추가적인 스타일을 필요에 따라 지정할 수 있습니다. */
+  position: relative;
+  font-weight: 200;
+  top: -20px;
+}
+.package1{
+margin-top: 300px;
+}
+.circlesection21{
+  width: 500px;
+  height: 500px;
+  background-color: rgb(60, 225, 110); /* 적절한 색상으로 변경하세요 */
+  border-radius: 50%; /* 원 모양을 만듭니다 */
+  position: absolute; /* 위치를 조절하기 위해 절대 위치로 설정합니다 */
+  bottom: -20px; /* 글자 아래로 원을 이동시킵니다 */
+  left: 50%; /* 가운데 정렬을 위해 왼쪽 위치를 50%로 설정합니다 */
+  margin-left: 50px;
+  margin-top: 650px;
+  transform: translateX(-50%)
+}
